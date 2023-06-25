@@ -3,7 +3,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  text-align: justify;
   @include respond-to("large") {
     padding: 0px 40px;
   }
@@ -29,7 +28,15 @@
   padding: 0px 40px;
 }
 
+.m-showcase-item-text > h1 {
+  text-align: center;
+  @include respond-to("large") {
+    text-align: left;
+  }
+}
+
 .m-showcase-item-text > p {
+  text-align: justify;
   font-size: 1rem;;
   @include respond-to("large") {
     font-size: 1.4rem;
