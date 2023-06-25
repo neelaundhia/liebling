@@ -1,0 +1,27 @@
+.m-showcase-client-container {
+  width: 100%;
+  padding: 20px 16vw;
+  margin: 50px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.m-showcase-client-wrapper {
+  flex-basis: 50%;
+  @include respond-to("medium") {
+    flex-basis: 33.33%;
+  }
+  @include respond-to("large") {
+    flex-basis: 16.66%;
+  }
+}
+
+.m-showcase-client-image {
+  max-width: 16vw;
+  display: block;
+  margin: auto;
+  @include respond-to("large") {
+    max-width: 6vw;
+  }
+}
