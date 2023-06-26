@@ -19,218 +19,238 @@ into the {body} of the default.hbs template --}}
 {{!-- Special header.hbs partial to generate the
 <header>
   tag --}}
-  {{> header background=@site.cover_image}}
-  <main class="main-wrap">
-    {{!-- Inject styles of the hero image to make it responsive --}}
-    {{> hero background=@site.cover_image}}
-    <div class="m-hero__content" data-animate="fade-down">
-      <h1 class="m-hero-title bigger">{{@site.title}}</h1>
-      {{#if @site.description }}
-        <p class="m-hero-description bigger">{{@site.description}}</p>
+{{> header background=@site.cover_image}}
+<main class="main-wrap">
+  {{!-- Inject styles of the hero image to make it responsive --}}
+  {{> hero background=@site.cover_image}}
+  <div class="m-hero__content" data-animate="fade-down">
+    <h1 class="m-hero-title bigger">{{@site.title}}</h1>
+    {{#if @site.description }}
+      <p class="m-hero-description bigger">{{@site.description}}</p>
+    {{/if}}
+    {{#if @custom.use_custom_cta }}
+      <a href="{{@custom.custom_cta_url}}" class="m-button filled">{{@custom.custom_cta_text}}</a>
+    {{else}}
+      {{#if @site.members_enabled }}
+        <a href="{{@site.url}}/newsletter" class="m-button filled js-newsletter">{{t "Subscribe"}}</a>
       {{/if}}
-      {{#if @custom.use_custom_cta }}
-        <a href="{{@custom.custom_cta_url}}" class="m-button filled">{{@custom.custom_cta_text}}</a>
-      {{else}}
-        {{#if @site.members_enabled }}
-          <a href="{{@site.url}}/newsletter" class="m-button filled js-newsletter">{{t "Subscribe"}}</a>
-        {{/if}}
-      {{/if}}
+    {{/if}}
+  </div>
+  </section>
+  <section id="introduction">
+    <div class="m-showcase-container">
+      <div class="m-showcase-item">
+        <div class="m-showcase-item-text">
+          <h1>I love to transform ideas into code!</h1>
+          <p>
+            As a dedicated software developer specializing in frontend development, I have a solid foundation in HTML,
+            CSS, JavaScript and Python. I love to use my skills along with powerful libraries like React and elegant
+            frameworks like FastAPI to create highly interactive,visually captivating and functionally flawless web
+            applications.
+          </p>
+        </div>
+      </div>
+      <div class="m-showcase-item">
+        <img class="m-showcase-item-image" src="https://www.neelaundhia.com/content/images/static/code-typing.svg" alt="Code Typing Illustration">
+      </div>
+    </div>
+    <div class="m-showcase-container m-showcase-container-reverse">
+      <div class="m-showcase-item">
+        <img class="m-showcase-item-image"
+          src="https://www.neelaundhia.com/content/images/static/server-configuration.svg" alt="Server Configuration Illustration">
+      </div>
+      <div class="m-showcase-item">
+        <div class="m-showcase-item-text">
+          <h1>I have a homelab and I love to tinker!</h1>
+          <ul>
+            <li>
+              Proficiency in the Debian and Ubuntu flavours of Linux coupled with hands-on experience in KVM and
+              ProxmoxVE, enables me to efficiently manage the IT infrascture for companies.
+            </li>
+            <li>
+              Through my experience in containerization using Docker Compose, and Kubernetes (K3S), I facilitate
+              streamlined development and scalable deployments.
+            </li>
+            <li>
+              Additionally, my conversance GitHub Actions for CI/CD helps me ensure automated and efficient software
+              delivery for clients.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="m-showcase-container">
+      <div class="m-showcase-item">
+        <div class="m-showcase-item-text">
+          <h1>Be it people or things, they work better when connected!</h1>
+          <p>
+            <li>Adept at Python, Embedded C, and C++, I possess the skills to develop robust end-to-end IoT
+              applications.</li>
+            <li>My familiarity with FastAPI allows me to build efficient and scalable APIs for seamless integration.
+            </li>
+            <li>
+              Additionally, my experience with MQTT, AMQP, InfluxDB, Grafana, GPRS Telemetry, and LoRaWAN empowers me to
+              design and implement advanced data collection, storage, and visualization systems.
+            </li>
+            <li>
+              Leveraging platforms like Raspberry Pi, ESP32, and AVR ATmega, I have successfully delivered end-to-end
+              IoT
+              solutions.
+            </li>
+          </p>
+        </div>
+      </div>
+      <div class="m-showcase-item">
+        <img class="m-showcase-item-image" src="https://www.neelaundhia.com/content/images/static/smart-home.svg" alt="Smart Home Ilustration">
+      </div>
+    </div>
+    <div class="m-showcase-container m-showcase-container-reverse">
+      <div class="m-showcase-item">
+        <img class="m-showcase-item-image" src="https://www.neelaundhia.com/content/images/static/climate-change.svg" alt="Climate Change Illustration">
+      </div>
+      <div class="m-showcase-item">
+        <div class="m-showcase-item-text">
+          <h1>I love to transform ideas into code!</h1>
+          <p>
+            As I immerse myself in the world of coding, I also find solace and inspiration in the beauty of our natural
+            surroundings. Long treks amidst majestic mountains, tranquil forests, and breathtaking landscapes invigorate
+            my spirit and ignite my creativity. I am dedicated to utilizing my skills and knowledge to
+            contribute to the global effort to combat climate change. Join me on this journey as we explore the
+            intersection of technology and nature, working together to create innovative solutions that pave the way for
+            a more sustainable world.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
-</main>
-<section>
-  <div class="m-showcase-container">
-    <div class="m-showcase-item">
-      <div class="m-showcase-item-text">
-        <h1>I love to transform ideas into code!</h1>
-        <p>
-          As a dedicated software developer specializing in frontend development, I have a solid foundation in HTML, CSS, and JavaScript. I bring websites and applications to life with seamless user experiences. I am conversant with the React library and well capable of leveraging its power to build dynamic and interactive user interfaces. Beyond my experience in frontend, I’ve also ventured into the exciting realm of the Internet of Things, applying my skills to connect physical devices and create innovative solutions.
-        </p>
+  <section id="clients">
+    <h1 style="text-align: center;">Clients</h1>
+    <div class="m-showcase-client-container">
+      <div class="m-showcase-client-wrapper">
+        <a target="_blank" href="https://www.indianrail.gov.in/">
+          <img class="m-showcase-client-image"
+            src="https://www.neelaundhia.com/content/images/static/indianrailways-logo.png" alt="Indian Railways Logo">
+          <h3 style="text-align: center;">Indian Railways</h3>
+        </a>
+      </div>
+      <div class="m-showcase-client-wrapper">
+        <a target="_blank" href="https://ddpdoo.gov.in/units/OFC">
+          <img class="m-showcase-client-image"
+            src="https://www.neelaundhia.com/content/images/static/ordnancefactory-logo.png" alt="Ordnance Factory Kanpur Logo">
+          <h3 style="text-align: center;">OFC Kanpur</h3>
+        </a>
+      </div>
+      <div class="m-showcase-client-wrapper">
+        <a target="_blank" href="https://www.iitk.ac.in/">
+          <img class="m-showcase-client-image" src="https://www.neelaundhia.com/content/images/static/iitk-logo.png" alt="Indian Institute of Technology Kanpur Logo">
+          <h3 style="text-align: center;">IIT Kanpur</h3>
+        </a>
+      </div>
+      <div class="m-showcase-client-wrapper">
+        <a target="_blank" href="https://pharmeasy.in/">
+          <img class="m-showcase-client-image"
+            src="https://www.neelaundhia.com/content/images/static/pharmeasy-logo.png" alt="Pharmeasy Logo">
+          <h3 style="text-align: center;">Pharmeasy</h3>
+        </a>
+      </div>
+      <div class="m-showcase-client-wrapper">
+        <a target="_blank" href="https://www.medcords.com/">
+          <img class="m-showcase-client-image" src="https://www.neelaundhia.com/content/images/static/medcords-logo.png" alt="Medcords Logo">
+          <h3 style="text-align: center;">Medcords</h3>
+        </a>
+      </div>
+      <div class="m-showcase-client-wrapper">
+        <a target="_blank" href="https://www.indigoreels.com/">
+          <img class="m-showcase-client-image"
+            src="https://www.neelaundhia.com/content/images/static/indigoreels-logo.png" alt="Indigoreels Logo">
+          <h3 style="text-align: center;">Indigoreels</h3>
+        </a>
       </div>
     </div>
-    <div class="m-showcase-item">
-      <img class="m-showcase-item-image"
-           src="https://www.neelaundhia.com/content/images/static/code-typing.svg">
-    </div>
-  </div>
-  <div class="m-showcase-container m-showcase-container-reverse">
-    <div class="m-showcase-item">
-      <img class="m-showcase-item-image"
-           src="https://www.neelaundhia.com/content/images/static/server-configuration.svg">
-    </div>
-    <div class="m-showcase-item">
-      <div class="m-showcase-item-text">
-        <h1>I love to transform ideas into code!</h1>
-        <p>
-          As a dedicated software developer specializing in frontend development, I have a solid foundation in HTML, CSS, and JavaScript. I bring websites and applications to life with seamless user experiences. I am conversant with the React library and well capable of leveraging its power to build dynamic and interactive user interfaces. Beyond my experience in frontend, I’ve also ventured into the exciting realm of the Internet of Things, applying my skills to connect physical devices and create innovative solutions.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="m-showcase-container">
-    <div class="m-showcase-item">
-      <div class="m-showcase-item-text">
-        <h1>I love to transform ideas into code!</h1>
-        <p>
-          As a dedicated software developer specializing in frontend development, I have a solid foundation in HTML, CSS, and JavaScript. I bring websites and applications to life with seamless user experiences. I am conversant with the React library and well capable of leveraging its power to build dynamic and interactive user interfaces. Beyond my experience in frontend, I’ve also ventured into the exciting realm of the Internet of Things, applying my skills to connect physical devices and create innovative solutions.
-        </p>
-      </div>
-    </div>
-    <div class="m-showcase-item">
-      <img class="m-showcase-item-image"
-           src="https://www.neelaundhia.com/content/images/static/smart-home.svg">
-    </div>
-  </div>
-  <div class="m-showcase-container m-showcase-container-reverse">
-    <div class="m-showcase-item">
-      <img class="m-showcase-item-image"
-           src="https://www.neelaundhia.com/content/images/static/climate-change.svg">
-    </div>
-    <div class="m-showcase-item">
-      <div class="m-showcase-item-text">
-        <h1>I love to transform ideas into code!</h1>
-        <p>
-          As a dedicated software developer specializing in frontend development, I have a solid foundation in HTML, CSS, and JavaScript. I bring websites and applications to life with seamless user experiences. I am conversant with the React library and well capable of leveraging its power to build dynamic and interactive user interfaces. Beyond my experience in frontend, I’ve also ventured into the exciting realm of the Internet of Things, applying my skills to connect physical devices and create innovative solutions.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <h1 style="text-align: center;">Clients</h1>
-  <div class="m-showcase-client-container">
-    <div class="m-showcase-client-wrapper">
-      <a target="_blank" href="https://www.indianrail.gov.in/">
-        <img class="m-showcase-client-image"
-             src="https://www.neelaundhia.com/content/images/static/indianrailways-logo.png"
-             alt="Indian Railways Logo">
-        <h3 style="text-align: center;">Indian Railways</h3>
-      </a>
-    </div>
-    <div class="m-showcase-client-wrapper">
-      <a target="_blank" href="https://ddpdoo.gov.in/units/OFC">
-        <img class="m-showcase-client-image"
-             src="https://www.neelaundhia.com/content/images/static/ordnancefactory-logo.png"
-             alt="Ordnance Factory Kanpur Logo">
-        <h3 style="text-align: center;">OFC Kanpur</h3>
-      </a>
-    </div>
-    <div class="m-showcase-client-wrapper">
-      <a target="_blank" href="https://www.iitk.ac.in/">
-        <img class="m-showcase-client-image"
-             src="https://www.neelaundhia.com/content/images/static/iitk-logo.png"
-             alt="Indian Institute of Technology Kanpur Logo">
-        <h3 style="text-align: center;">IIT Kanpur</h3>
-      </a>
-    </div>
-    <div class="m-showcase-client-wrapper">
-      <a target="_blank" href="https://pharmeasy.in/">
-        <img class="m-showcase-client-image"
-             src="https://www.neelaundhia.com/content/images/static/pharmeasy-logo.png"
-             alt="Pharmeasy Logo">
-        <h3 style="text-align: center;">Pharmeasy</h3>
-      </a>
-    </div>
-    <div class="m-showcase-client-wrapper">
-      <a target="_blank" href="https://www.medcords.com/">
-        <img class="m-showcase-client-image"
-             src="https://www.neelaundhia.com/content/images/static/medcords-logo.png"
-             alt="Medcords Logo">
-        <h3 style="text-align: center;">Medcords</h3>
-      </a>
-    </div>
-    <div class="m-showcase-client-wrapper">
-      <a target="_blank" href="https://www.indigoreels.com/">
-        <img class="m-showcase-client-image"
-             src="https://www.neelaundhia.com/content/images/static/indigoreels-logo.png"
-             alt="Indigoreels Logo">
-        <h3 style="text-align: center;">Indigoreels</h3>
-      </a>
-    </div>
-  </div>
-</section>
-<section>
-  <h1 style="text-align: center;">Projects</h1>
-  <div class="l-content">
-    <div class="l-wrapper" data-animate="fade-up">
-      <div class="l-grid centered">
-        {{!-- The tag below iterates over all the posts --}}
-        {{!-- The template below includes the markup for each post --}}
-        {{#foreach posts}}
-        {{#is "post"}}
-        <div class="m-recommended-slider__item swiper-slide">
-        {{/is}}
-        {{#has tag="#portfolio"}}
-        <article class="m-article-card {{#unless feature_image}}no-picture{{/unless}} {{post_class}}">
-          <div class="m-article-card__picture">
+  </section>
+  <section>
+    <h1 style="text-align: center;">Projects</h1>
+    <div class="l-content">
+      <div class="l-wrapper" data-animate="fade-up">
+        <div class="l-grid centered">
+          {{!-- The tag below iterates over all the posts --}}
+          {{!-- The template below includes the markup for each post --}}
+          {{#foreach posts}}
+            {{#is "post"}}
+              <div class="m-recommended-slider__item swiper-slide">
+            {{/is}}
+            {{#has tag="#portfolio"}}
+              <article class="m-article-card {{#unless feature_image}}no-picture{{/unless}} {{post_class}}">
+                <div class="m-article-card__picture">
             <a href="{{url}}"
                class="m-article-card__picture-link"
                aria-hidden="true"
                tabindex="-1"></a>
-            {{#if feature_image }}
+                  {{#if feature_image }}
               <img class="m-article-card__picture-background"
                    src="{{img_url feature_image size="m"}}"
                    loading="lazy"
                    alt="">
-            {{/if}}
+                  {{/if}}
             <a href="{{primary_author.url}}"
                class="m-article-card__author js-tooltip"
                aria-label="{{primary_author.name}}"
                data-tippy-content="{{t "Posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "Among with") separator=" , "}}">
-              {{#if primary_author.profile_image }}
+                    {{#if primary_author.profile_image }}
                 <div style="background-image: url({{img_url primary_author.profile_image size="xs"}})"></div>
-              {{else}}
+                    {{else}}
                 <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
-              {{/if}}
-            </a>
-            {{#if featured }}
+                    {{/if}}
+                  </a>
+                  {{#if featured }}
               <a href="{{url}}"
                  class="m-article-card__featured js-tooltip"
                  data-tippy-content="{{t "Featured"}}"
                  aria-label="{{t "Featured"}}">
-                <span class="icon-star" aria-hidden="true"></span>
-              </a>
-            {{/if}}
-          </div>
-          {{#if primary_tag }}
-            <div class="m-article-card__info">
-              <a href="{{primary_tag.url}}" class="m-article-card__tag">{{primary_tag.name}}</a>
-            {{else}}
-              <div class="m-article-card__info no-tag">
-              {{/if}}
+                      <span class="icon-star" aria-hidden="true"></span>
+                    </a>
+                  {{/if}}
+                </div>
+                {{#if primary_tag }}
+                  <div class="m-article-card__info">
+                    <a href="{{primary_tag.url}}" class="m-article-card__tag">{{primary_tag.name}}</a>
+                {{else}}
+                  <div class="m-article-card__info no-tag">
+                {{/if}}
               <a href="{{url}}"
                  class="m-article-card__info-link"
                  aria-label="{{title}}">
-                <div>
+                  <div>
                   <h2 class="m-article-card__title js-article-card-title {{#unless feature_image}}js-article-card-title-no-image{{/unless}}"
                       title="{{title}}">{{title}}</h2>
-                </div>
-                <div class="m-article-card__timestamp">
-                  <span>{{date published_at timeago="true"}}</span>
-                  <span>&bull;</span>
-                  <span>{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
-                </div>
-              </a>
-            </div>
-          </article>
+                  </div>
+                  <div class="m-article-card__timestamp">
+                    <span>{{date published_at timeago="true"}}</span>
+                    <span>&bull;</span>
+                    <span>{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
+                  </div>
+                </a>
+        </div>
+        </article>
         {{/has}}
         {{#is "post"}}
       </div>
-    {{/is}}
-  {{else}}
-    <div class="m-recommended-slider__item swiper-slide">
-      <div class="m-heading no-margin">
-        <h3>{{t "No posts found"}}</h3>
-        <p>{{t "Apparently there are no posts at the moment, check again later."}}</p>
-      </div>
+      {{/is}}
+      {{else}}
+        <div class="m-recommended-slider__item swiper-slide">
+          <div class="m-heading no-margin">
+            <h3>{{t "No posts found"}}</h3>
+            <p>{{t "Apparently there are no posts at the moment, check again later."}}</p>
+          </div>
+        </div>
+        {{/foreach}}
     </div>
-  {{/foreach}}
-</div>
-</div>
-{{!-- Links to Previous/Next posts --}}
-{{pagination}}
-</div>
-</section>
+    </div>
+    {{!-- Links to Previous/Next posts --}}
+    {{pagination}}
+    </div>
+  </section>
+</main>
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
 <script defer src="{{asset "js/home.js"}}"></script>

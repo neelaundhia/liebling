@@ -28,15 +28,24 @@
   padding: 0px 40px;
 }
 
-.m-showcase-item-text > h1 {
+.m-showcase-item-text h1 {
   text-align: center;
   @include respond-to("large") {
     text-align: left;
   }
 }
 
-.m-showcase-item-text > p {
+.m-showcase-item-text p {
   text-align: justify;
+  font-size: 1rem;;
+  @include respond-to("large") {
+    font-size: 1.4rem;
+  }
+}
+
+.m-showcase-item-text  li {
+  text-align: justify;
+  margin: 0 0 15px 0;
   font-size: 1rem;;
   @include respond-to("large") {
     font-size: 1.4rem;
