@@ -30,13 +30,19 @@
 
 .m-showcase-item-text h1 {
   text-align: center;
+  font-size: 22px;
+  @include respond-to("medium") {
+    text-align: center;
+    font-size: 32px;
+  }
   @include respond-to("large") {
     text-align: left;
+    font-size: 32px;
   }
 }
 
 .m-showcase-item-text p {
-  text-align: justify;
+  text-align: left;
   font-size: 1rem;;
   @include respond-to("large") {
     font-size: 1.4rem;
@@ -44,7 +50,7 @@
 }
 
 .m-showcase-item-text  li {
-  text-align: justify;
+  text-align: left;
   margin: 0 0 15px 0;
   font-size: 1rem;;
   @include respond-to("large") {
