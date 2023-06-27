@@ -53,7 +53,6 @@
 }
 
 .m-showcase-item-text p {
-  text-align: justify;
   font-size: 0.95rem;
   @include respond-to("medium") {
     font-size: 1.2rem;
@@ -64,7 +63,6 @@
 }
 
 .m-showcase-item-text  li {
-  text-align: justify;
   margin: 0 0 15px 0;
   font-size: 0.95rem;
   @include respond-to("medium") {
