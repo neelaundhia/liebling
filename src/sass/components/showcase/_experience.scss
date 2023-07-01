@@ -1,0 +1,52 @@
+#experience {
+  margin: 30px 0 0 0;
+  @include respond-to("large") {
+    margin: 0 0 30px 0px;
+  }
+}
+
+.m-experience-container {
+  width: 100%;
+  margin: 40px 0 0 0;; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include respond-to("large") {
+    padding: 0px 40px;
+  }
+}
+
+.m-experience-item {
+  padding: 0px 5vw;
+  display: flex;
+  flex-basis: 100%;
+  align-items: top;
+  @include respond-to("large") {
+    padding: 0px 20vw;
+  }
+}
+
+.m-experience-item-logo > img {
+  width: 48px;
+  border: 1px solid;
+  border-radius: 100%;
+  background-color: white;
+  @include respond-to("large") {
+    width: 64px;
+  }
+}
+
+.m-experience-item-text {
+  padding: 0px 20px;
+  @include respond-to("large") {
+    padding: 0px 40px;
+  }
+}
+
+.m-experience-item-text ul, li {
+  padding-left: 15px;
+}
+
+.m-experience-item-text-company {
+  margin: 0px;
+}
